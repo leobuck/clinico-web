@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:h="http://java.sun.com/jsf/html"
+            xmlns:p="http://primefaces.org/ui"
+            xmlns:f="http://java.sun.com/jsf/core"
+            lang="pt-br">
+<h:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Agenda</title>
+</h:head>
+<h:body>
+	<h:outputScript name="locale-primefaces.js" library="js" />
+	<h:form>	
+		<h:panelGrid columns="2" cellpadding="5">
+			<p:calendar id="inline" value="#{agendaBean.dataAgenda}" mode="inline" pattern="dd/MM/yyyy">
+				<p:ajax event="dateSelect" update="dataSelecionada" /> 
+				<p:ajax event="change" update="dataSelecionada" />
+			</p:calendar>
+			
+			
+			<p:outputLabel value="#{agendaBean.dataAgenda}" id="dataSelecionada">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Credenciado:" for="credenciados" />
+			<p:selectOneMenu id="credenciados">
+				
+			</p:selectOneMenu>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

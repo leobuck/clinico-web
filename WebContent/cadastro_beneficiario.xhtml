@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:h="http://java.sun.com/jsf/html"
+            xmlns:p="http://primefaces.org/ui"
+            xmlns:f="http://java.sun.com/jsf/core"
+            lang="pt-br">
+<h:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Cadastro de Beneficiário</title>
+</h:head>
+<h:body>
+	<h:form>	
+		<div class="ui-fluid">
+			<p:panelGrid columns="4" columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2,ui-g-12 ui-md-4" layout="grid" styleClass="ui-panelgrid-blank ui-fluid">
+				<p:outputLabel for="nome" value="Nome:" />
+				<p:inputText id="nome" value="#{cadBenefBean.beneficiario.nome}" />
+				
+				<p:commandButton id="btnSalvar" value="Salvar" icon="ui-icon-plus" type="button" 
+					actionListener="#{cadBenefBean.salvar}" />
+			</p:panelGrid>
+		</div>
+	</h:form>
+</h:body>
+</html>
